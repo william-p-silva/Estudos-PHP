@@ -1,5 +1,6 @@
 <?php 
-require_once 'verifia_secao.php';
+session_start();
+require_once '../verifica_secao.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,12 +8,12 @@ require_once 'verifia_secao.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro ADMIN</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <div>
         <h1>Cadastrar Cliente</h1>
-        <form action="processa-cadastro-cliente.php" method="POST">
+        <form action="../processa-cadastro-cliente.php" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             <br><br>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_POST['txtEmail']) or empty($_POST['senha'])) {
-    header('Location: tela-login.php?erro=1');
+    header('Location: view/view/tela-login.php?erro=1');
     exit;
 } else {
     // Obtém os dados enviados pelo formulário
@@ -26,24 +26,24 @@ if (empty($_POST['txtEmail']) or empty($_POST['senha'])) {
                 $_SESSION['email'] = $usuario['email'];
                 $_SESSION['perfil'] = $usuario['perfil'];
                 if ($usuario['perfil'] == 'admin') {
-                    header('Location: admin.php');
+                    header('Location: view/admin.php');
                 } else {
-                    header('Location: us.php');
+                    header('Location: view/inicioUsuario.php');
                 }
                 exit;
             } else {
                 //senha incorreta
-                header('Location: tela-login.php?erro=login-invalido');
+                header('Location: view/tela-login.php?erro=login-invalido');
                 exit;
             }
         } else {
-            header('Location: tela-login.php?erro=login-invalido');
+            header('Location: view/tela-login.php?erro=login-invalido');
             exit;
         }
     } catch (PDOException $e) {
         // Em produção, registre o erro em um log ao invés de mostrar ao usuário
         // echo "Erro ao consultar: " . $e->getMessage();
-        header('Location: tela-login.php?erro=login-invalido');
+        header('Location: view/tela-login.php?erro=login-invalido');
         exit;
     }
 }

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once 'verifia_secao.php';
+require_once '../verifica_secao.php';
 verificar_acesso('admin');
 ?>
 <!DOCTYPE html>

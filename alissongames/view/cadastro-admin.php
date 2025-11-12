@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once 'verifia_secao.php';
+require_once '../verifica_secao.php';
 verificar_acesso('admin');
 ?>
 <!DOCTYPE html>
@@ -9,12 +9,12 @@ verificar_acesso('admin');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro ADMIN</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <div>
         <h1>Cadastrar Administrador</h1>
-        <form action="processa-cadastro-adm.php" method="POST">
+        <form action="../processa-cadastro-adm.php" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             <br><br>

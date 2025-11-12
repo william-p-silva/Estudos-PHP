@@ -15,7 +15,7 @@ function verificar_acesso($perfilRequerido = null, $paginaLogin = 'tela-login.ph
         if ($_SESSION['perfil'] !== $perfilRequerido) {
             // Se for cliente tentando acessar ADMIN, redireciona para a área dele
             if ($_SESSION['perfil'] === 'cliente') {
-                header("location: us.php?erro=acesso-negado"); // Vai para a área do cliente
+                header("location: tela-login.php?erro=acesso-negado"); // Vai para a área do cliente
                 exit;
             } else {
                 if ($_SESSION['perfil'] == 'admin') {

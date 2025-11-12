@@ -1,6 +1,6 @@
 <?php
 if (empty($_POST['nome']) or empty($_POST['txtEmail']) or empty($_POST['senha'])) {
-    header('Location: cadastro-cliente.php?erro=1');
+    header('Location: view/cadastro-admin.php?erro=1');
     exit();
 } else {
     require_once 'conexao.php';
@@ -15,7 +15,7 @@ if (empty($_POST['nome']) or empty($_POST['txtEmail']) or empty($_POST['senha'])
     if ($stmt->rowCount() == 0) {
         $senha_hash = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-        $perfil = 'cliente';
+        $perfil = 'admin';
 
         // Tente executar a inserção
         try {
@@ -38,11 +38,11 @@ if (empty($_POST['nome']) or empty($_POST['txtEmail']) or empty($_POST['senha'])
             // É importante não mostrar o erro cru para o usuário, mas registrar no log.
             // Para estudo, podemos mostrar, mas em produção, use um log.
             // echo "Erro ao cadastrar: " . $e->getMessage();
-            header('Location: cadastro-cliente.php?erro=3'); // Novo erro para falha do BD
+            header('Location: view/cadastro-admin.php?erro=3'); // Novo erro para falha do BD
             exit();
         }
     } else {
-        header('Location: cadastro-cliente.php?erro=2');
+        header('Location: view/cadastro-admin.php?erro=2');
         exit();
     }
 }
