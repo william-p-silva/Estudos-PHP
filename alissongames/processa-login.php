@@ -47,3 +47,5 @@ if (empty($_POST['txtEmail']) or empty($_POST['senha'])) {
         exit;
     }
 }
+
+
