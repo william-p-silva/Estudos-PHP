@@ -20,8 +20,10 @@ verificar_acesso('admin');
     <header>
         <h1>Painel do Administrador</h1>
         <form action="../processa-logout.php" method="POST" id="navbar">
+            <a href="admin.php">dashboard</a>
             <a href="cadastro-produto.php">Cadastrar Produto</a>
-            <a href="#">Produtos</a>
+            <a href="produtos.php">Produtos</a>
+
             <button class="sair" type="submit">Sair
         </form>
     </header>
@@ -41,7 +43,7 @@ verificar_acesso('admin');
                 </h3>
             </div>
 
-            <a href="cadastro-produto.php">
+            <a href="produtos.php">
                 <div class="card" style="border-top-color: #16a34a;">
                     <p>Produtos</p>
                     <h3>

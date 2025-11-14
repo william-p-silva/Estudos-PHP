@@ -67,7 +67,7 @@ verificar_acesso('admin');
       margin-bottom: 20px;
     }
 
-    form {
+    #cadastro-produto-form {
       background-color: white;
       padding: 25px;
       border-radius: 10px;
@@ -168,8 +168,10 @@ verificar_acesso('admin');
   <header>
     <h1>Painel do Administrador</h1>
     <form action="../processa-logout.php" method="POST" id="navbar">
+      <a href="admin.php">dashboard</a>
       <a href="cadastro-produto.php">Cadastrar Produto</a>
-      <a href="#">Produtos</a>
+      <a href="produtos.php">Produtos</a>
+
       <button class="sair" type="submit">Sair
     </form>
   </header>
@@ -177,7 +179,7 @@ verificar_acesso('admin');
   <main>
     <h2>Cadastrar Novo Produto</h2>
 
-    <form action="../processa-cadastro-produto.php" method="POST">
+    <form action="../processa-cadastro-produto.php" method="POST" id="cadastro-produto-form">
       <div class="form-group">
         <label for="nome">Nome do Produto</label>
         <input type="text" id="nome" name="nome" placeholder="Ex: The Legend of Zelda: Tears of the Kingdom" required>

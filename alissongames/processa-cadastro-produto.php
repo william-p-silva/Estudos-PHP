@@ -34,8 +34,10 @@ if (empty($_POST['nome']) or empty($_POST['descricao']) or empty($_POST['preco']
             ':ativo' => $ativo
         ]);
         header('Location: view/cadastro-produto.php?sucesso=1');
+        exit();
     }catch (PDOException $e){
-        echo "Erro ao cadastrar produto: " . $e->getMessage();
+        header('Location: view/cadastro-produto.php?erro=1');
+        exit();
     }
 }
 
