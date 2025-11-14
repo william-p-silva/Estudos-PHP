@@ -12,6 +12,12 @@ verificar_acesso('admin');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Administração</title>
     <link rel="stylesheet" href="style/produtos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        #justo {
+            text-align: justify;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,11 +40,11 @@ verificar_acesso('admin');
 
         <div class="produtos">
             <!-- Card 1 -->
-            <?php 
-            require_once '../conexao.php';         
+            <?php
+            require_once '../conexao.php';
             require_once '../exibe-produtos.php';
-                exibeProduto($con);
-                    
+            exibeProduto($con);
+
             ?>
 
         </div>
@@ -48,7 +54,30 @@ verificar_acesso('admin');
     <footer>
         &copy; 2025 - Painel Administrativo
     </footer>
-
+    <script>
+        function confirmarExclusao(id, nome) {
+            Swal.fire({
+                title: "Excluir produto?",
+                text: `Tem certeza que deseja excluir o produto de ID: ${id} e Nome: ${nome}? Esta ação não pode ser desfeita.`,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Sim, excluir",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "excluir.php?id=" + id;
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
+<?php
+if (isset($_GET['erro']) && $_GET['erro'] == 1) {
+    echo "<script>window.alert('Erro ao buscar produtos.')</script>";
+}
+if (isset($_GET['sucesso']) and $_GET['sucesso'] == 1) {
+    echo "<script>window.alert('Alteração Realizada com sucesso')</script>";
+}
+?>

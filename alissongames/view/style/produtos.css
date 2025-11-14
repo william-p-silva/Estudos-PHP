@@ -69,80 +69,75 @@
   }
   
   /* -------- GRID DE PRODUTOS -------- */
-  .produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-  }
-  
-  /* -------- CARD DO PRODUTO -------- */
-  .card-produto {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-    border-top: 4px solid #4f46e5;
-    transition: transform 0.2s;
-  }
-  
-  .card-produto:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card-produto img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .card-produto h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
-  }
-  
-  .preco {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  /* -------- BOTÕES -------- */
-  .acoes {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  
-  .editar,
-  .excluir {
-    flex: 1;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: 0.2s;
-  }
-  
-  .editar {
-    background-color: #2563eb;
-    color: white;
-  }
-  
-  .editar:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .excluir {
-    background-color: #ef4444;
-    color: white;
-  }
-  
-  .excluir:hover {
-    background-color: #dc2626;
-  }
-  
+/* Card individual */
+.card-produto {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  border: 1px solid #e4e4e4;
+}
+
+/* Título (nome do produto) */
+.card-produto h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Linhas de informação (preço, id, status, estoque) */
+.card-produto .preco {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 3px 0;
+}
+
+/* Descrição */
+.card-produto .justo {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+/* Área das ações */
+.card-produto .acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Botão Editar */
+.card-produto .editar {
+  text-decoration: none;
+  background: #6c63ff;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.card-produto .editar:hover {
+  background: #5b53e5;
+}
+
+/* Botão Excluir */
+.card-produto .excluir {
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.card-produto .excluir:hover {
+  background: #e64f4f;
+}
+
   /* -------- FOOTER -------- */
   footer {
     text-align: center;
@@ -167,5 +162,8 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+  a:hover{
+    text-decoration: underline;
   }
   

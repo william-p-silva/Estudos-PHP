@@ -26,3 +26,21 @@ function contarPedidos($con){
     $stmt = $stmt->fetchColumn();
     return $stmt;
 }
+
+function vericarProduto($con)
+{
+    if (!isset($_GET['id'])) {
+        header('Location: produtos.php?erro=1');
+        exit();
+    } else if (empty($_GET['id']) or !is_numeric($_GET['id'])) {
+        header('Location: produtos.php?erro=1');
+        exit();
+    }else{
+        $id = $_GET['id'];
+        $sql = "SELECT id, nome, descricao, preco, estoque, ativo FROM produtos WHERE id = :id";
+        $stmt = $con->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $produto = $stmt->fetch();
+    }
+}
+

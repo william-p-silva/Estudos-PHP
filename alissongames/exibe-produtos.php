@@ -14,21 +14,22 @@ function exibeProduto($con)
         $produtos = $stmt->fetchAll();
         if (isset($produtos)) {
             foreach ($produtos as $produto) {
+                echo "<div class='container-produtos'>";
                 echo "<div class='card-produto'>";
                 echo "<p class='preco'>ID: " . $produto['id'] . "</p>";
                 echo "<h3>" . $produto['nome'] . "</h3>";
                 echo "<p class='preco'>Preço: R$ " . $produto['preco'] . "</p>";
-                if ($produto['ativo'] == '1'){
-                    $produto['ativo'] = "Ativo";
-                }else{
-                    $produto['ativo'] = "Inativo";
-                }
+                $produto['ativo'] = ($produto['ativo'] == '1') ? 'Ativo' : 'Inativo';
                 echo "<p class='preco'>Status: " . $produto['ativo'] . "</p>";
                 echo "<p class='preco'>Estoque: " . $produto['estoque'] . "</p>";
                 echo "<div class='acoes'>";
+                echo "<p class='justo'>Descrição: " . $produto['descricao'] . "</p>";
+                echo "</div>";
+                echo "<div class='acoes'>";
                
-                echo "<button class='editar'>Editar</button>";
-                echo "<button class='excluir'>Excluir</button>";
+                echo "<a href='alterar-produtos.php?id=".$produto['id'] ."' class='editar'>Editar</a>";
+                echo "<button class='excluir' onclick='confirmarExclusao(" . $produto['id'] . ", \"" . $produto['nome'] . "\")'>Excluir</button>";
+
                 echo "</div>";
                 echo "</div>";
             };
