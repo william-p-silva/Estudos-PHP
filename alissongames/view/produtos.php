@@ -65,7 +65,7 @@ verificar_acesso('admin');
                 cancelButtonText: "Cancelar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "excluir.php?id=" + id;
+                    window.location.href = "../excluir-produto.php?id=" + id;
                 }
             });
         }
@@ -75,9 +75,36 @@ verificar_acesso('admin');
 </html>
 <?php
 if (isset($_GET['erro']) && $_GET['erro'] == 1) {
-    echo "<script>window.alert('Erro ao buscar produtos.')</script>";
+    echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Erro ao buscar produtos.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
 }
 if (isset($_GET['sucesso']) and $_GET['sucesso'] == 1) {
-    echo "<script>window.alert('Alteração Realizada com sucesso')</script>";
+    echo "
+    <script>
+        Swal.fire({
+            title: 'Sucesso',
+            text: 'Alteração realizada com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+    </script>";;
+}
+if (isset($_GET['sucesso']) and $_GET['sucesso'] == 2) {
+    echo "
+    <script>
+        Swal.fire({
+            title: 'Sucesso',
+            text: 'Produto excluido com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
 }
 ?>

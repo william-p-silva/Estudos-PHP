@@ -9,6 +9,7 @@ require_once '../verifica_secao.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro ADMIN</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div>
@@ -28,13 +29,37 @@ require_once '../verifica_secao.php';
     </div>
     <?php 
         if(isset($_GET['erro']) and $_GET['erro'] == 1){
-            echo "<script>window.alert('Dados Invalidos')</script>";
+            echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Dados Invalidos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
         }
         if(isset($_GET['erro']) and $_GET['erro'] == 2){
-            echo "<script>window.alert('Email já Cadastrado')</script>";
+            echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Email já Cadastrado',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
         }
         if(isset($_GET['erro']) and $_GET['erro'] == 3){
-            echo "<script>window.alert('Erro de insert no banco')</script>";
+            echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Erro desconhecido Tente novamente',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
         }
     ?>
     

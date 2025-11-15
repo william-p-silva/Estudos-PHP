@@ -16,6 +16,7 @@ $selected_nao = ($produto['ativo'] == 0) ? 'selected' : '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Produto - Loja de Jogos</title>
     <link rel="stylesheet" href="style/styleAdmin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         * {
             margin: 0;
@@ -236,7 +237,15 @@ $selected_nao = ($produto['ativo'] == 0) ? 'selected' : '';
         </form>
         <?php
         if (isset($_GET['erro']) and $_GET['erro'] == 1) {
-            echo "<script>window.alert('Dados Invalidos')</script>";
+            echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Dados Invalidos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
         }
 
         ?>

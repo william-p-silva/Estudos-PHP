@@ -11,6 +11,7 @@ verificar_acesso('admin');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastrar Produto - Loja de Jogos</title>
   <link rel="stylesheet" href="style/styleAdmin.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     * {
       margin: 0;
@@ -215,10 +216,26 @@ verificar_acesso('admin');
     </form>
     <?php
     if (isset($_GET['erro']) and $_GET['erro'] == 1) {
-      echo "<script>window.alert('Dados Invalidos')</script>";
+      echo "
+      <script>
+          Swal.fire({
+              title: 'Erro',
+              text: 'Dados Invalidos',
+              icon: 'error',
+              confirmButtonText: 'Ok'
+          });
+      </script>";
     }
     if (isset($_GET['sucesso']) and $_GET['sucesso'] == 1) {
-      echo "<script>window.alert('Cadastro Realizado')</script>";
+      echo "
+    <script>
+        Swal.fire({
+            title: 'Sucesso',
+            text: 'Cadastro Realizado com Sucesso',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
     }
     ?>
   </main>

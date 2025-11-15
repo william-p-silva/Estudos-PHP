@@ -13,6 +13,7 @@ verificar_acesso('admin');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - Loja de Jogos</title>
     <link rel="stylesheet" href="style/styleAdmin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 

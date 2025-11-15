@@ -2,14 +2,13 @@
 
 <?php
 
-require_once 'conexao.php';
 require_once 'verifica_secao.php';
 verificar_acesso('admin');
 
 function exibeProduto($con)
 {
     try {
-        $sql = "SELECT id, nome, descricao, preco, estoque, ativo FROM produtos";
+        $sql = "SELECT id, nome, descricao, preco, estoque, ativo FROM produtos ORDER BY nome ASC";
         $stmt = $con->query($sql);
         $produtos = $stmt->fetchAll();
         if (isset($produtos)) {

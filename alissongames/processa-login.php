@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_POST['txtEmail']) or empty($_POST['senha'])) {
-    header('Location: view/view/tela-login.php?erro=1');
+    header('Location: view/tela-login.php?erro=1');
     exit;
 } else {
     // Obtém os dados enviados pelo formulário

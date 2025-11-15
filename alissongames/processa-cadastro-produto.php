@@ -5,7 +5,8 @@ require_once 'verifica_secao.php';
 verificar_acesso('admin');
 
 
-if (empty($_POST['nome']) or empty($_POST['descricao']) or empty($_POST['preco']) or empty($_POST['estoque']) or !isset($_POST['ativo'])) {
+if (empty($_POST['nome']) or empty($_POST['descricao']) or empty($_POST['preco']) or !isset($_POST['estoque']) or !isset($_POST['ativo'])) {
+
     header('Location: view/cadastro-produto.php?erro=1');
     exit();
 
