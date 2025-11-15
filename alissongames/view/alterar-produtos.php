@@ -14,7 +14,7 @@ $selected_nao = ($produto['ativo'] == 0) ? 'selected' : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Produto - Loja de Jogos</title>
+    <title>Editar Produto</title>
     <link rel="stylesheet" href="style/styleAdmin.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
@@ -183,7 +183,8 @@ $selected_nao = ($produto['ativo'] == 0) ? 'selected' : '';
             <a href="admin.php">dashboard</a>
             <a href="cadastro-produto.php">Cadastrar Produto</a>
             <a href="produtos.php">Produtos</a>
-
+            <a href="usuarios-detalhes.php">Usuarios</a>
+            <a href="cadastro-admin.php">Cadastro Admin</a>
             <button class="sair" type="submit">Sair
         </form>
     </header>

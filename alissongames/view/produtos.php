@@ -29,7 +29,8 @@ verificar_acesso('admin');
             <a href="admin.php">dashboard</a>
             <a href="cadastro-produto.php">Cadastrar Produto</a>
             <a href="produtos.php">Produtos</a>
-
+            <a href="usuarios-detalhes.php">Usuarios</a>
+            <a href="cadastro-admin.php">Cadastro Admin</a>
             <button class="sair" type="submit">Sair
         </form>
     </header>
@@ -41,7 +42,6 @@ verificar_acesso('admin');
         <div class="produtos">
             <!-- Card 1 -->
             <?php
-            require_once '../conexao.php';
             require_once '../exibe-produtos.php';
             exibeProduto($con);
 

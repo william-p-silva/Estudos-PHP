@@ -1,32 +1,33 @@
 <?php 
-session_start();
-require_once '../verifica_secao.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro ADMIN</title>
+    <title>Cadastro Cliente</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <div>
-        <h1>Cadastrar Cliente</h1>
-        <form action="../processa-cadastro-cliente.php" method="POST">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            <br><br>
-            <label for="txtemail">Email:</label>
-            <input type="email" id="email1" name="txtEmail" required>
-            <br><br>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
-            <br><br>
-            <button type="submit">Cadastrar</button>
-        </form>
-    </div>
+<main>
+        <div>
+            <h2>Cadastrar</h2>
+            <form action="../processa-cadastro-cliente.php" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <br><br>
+                <label for="txtemail">Email:</label>
+                <input type="email" id="email1" name="txtEmail" required>
+                <br><br>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <br><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </main>
     <?php 
         if(isset($_GET['erro']) and $_GET['erro'] == 1){
             echo "

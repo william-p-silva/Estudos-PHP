@@ -13,11 +13,12 @@ function exibeProduto($con)
         $produtos = $stmt->fetchAll();
         if (isset($produtos)) {
             foreach ($produtos as $produto) {
+                $preco = $produto['preco'];
                 echo "<div class='container-produtos'>";
                 echo "<div class='card-produto'>";
                 echo "<p class='preco'>ID: " . $produto['id'] . "</p>";
                 echo "<h3>" . $produto['nome'] . "</h3>";
-                echo "<p class='preco'>Preço: R$ " . $produto['preco'] . "</p>";
+                echo "<p class='preco'>Preço: R$ " . number_format($preco, 2, ',', '.') . "</p>";
                 $produto['ativo'] = ($produto['ativo'] == '1') ? 'Ativo' : 'Inativo';
                 echo "<p class='preco'>Status: " . $produto['ativo'] . "</p>";
                 echo "<p class='preco'>Estoque: " . $produto['estoque'] . "</p>";

@@ -11,7 +11,7 @@ verificar_acesso('admin');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrativo - Loja de Jogos</title>
+    <title>Painel Administrativo</title>
     <link rel="stylesheet" href="style/styleAdmin.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -24,7 +24,8 @@ verificar_acesso('admin');
             <a href="admin.php">dashboard</a>
             <a href="cadastro-produto.php">Cadastrar Produto</a>
             <a href="produtos.php">Produtos</a>
-
+            <a href="usuarios-detalhes.php">Usuarios</a>
+            <a href="cadastro-admin.php">Cadastro Admin</a>
             <button class="sair" type="submit">Sair
         </form>
     </header>
@@ -33,16 +34,18 @@ verificar_acesso('admin');
         <h2>Visão Geral</h2>
 
         <!-- Cards Resumo -->
-        <div class="cards">
-            <div class="card" style="border-top-color: #4f46e5;">
-                <p>Usuários</p>
-                <h3>
-                    <?php
-                    require_once '../exibe-detalhes.php';
-                    echo contarUsuarios($con);
-                    ?>
-                </h3>
-            </div>
+        <a href="usuarios-detalhes.php">
+            <div class="cards">
+                <div class="card" style="border-top-color: #4f46e5;">
+                    <p>Usuários</p>
+                    <h3>
+                        <?php
+                        require_once '../exibe-detalhes.php';
+                        echo contarUsuarios($con);
+                        ?>
+                    </h3>
+                </div>
+        </a>
 
             <a href="produtos.php">
                 <div class="card" style="border-top-color: #16a34a;">
@@ -118,3 +121,6 @@ verificar_acesso('admin');
 </body>
 
 </html>
+
+
+

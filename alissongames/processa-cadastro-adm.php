@@ -30,7 +30,7 @@ if (empty($_POST['nome']) or empty($_POST['txtEmail']) or empty($_POST['senha'])
             ]);
 
             // Se o INSERT foi bem-sucedido:
-            header('Location: index.php?sucesso=1'); // Redireciona para login
+            header('Location: view/tela-login.php?sucesso=1'); // Redireciona para login
             exit();
 
         } catch (PDOException $e) {

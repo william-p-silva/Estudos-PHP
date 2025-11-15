@@ -1,9 +1,10 @@
-<?php 
+<?php
 session_start();
 require_once '../verifica_secao.php'
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +12,23 @@ require_once '../verifica_secao.php'
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
-<form action="../processa-login.php" method="POST">
 
-        <label for="txtemail">Email:</label>
-        <input type="email" id="email1" name="txtEmail" required>
-        <br><br>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-        <br><br>
-        <button type="submit">Entrar</button>
-        <p id="cad" >Ainda não tem um cadastro? <a href="cadastro-cliente.php">Clique aqui</a></p>
-    </form>
-    <?php 
-     if(isset($_GET['erro']) and $_GET['erro'] == 1){
+<body>
+    <main>
+        <form action="../processa-login.php" method="POST">
+
+            <label for="txtemail">Email:</label>
+            <input type="email" id="email1" name="txtEmail" required>
+            <br><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <br><br>
+            <button type="submit">Entrar</button>
+            <p id="cad">Ainda não tem um cadastro? <a href="cadastro-cliente.php">Clique aqui</a></p>
+        </form>
+    </main>
+    <?php
+    if (isset($_GET['erro']) and $_GET['erro'] == 1) {
         echo "
     <script>
         Swal.fire({
@@ -35,7 +39,7 @@ require_once '../verifica_secao.php'
         });
     </script>";
     }
-    if(isset($_GET['erro']) and $_GET['erro'] == 'login-invalido'){
+    if (isset($_GET['erro']) and $_GET['erro'] == 'login-invalido') {
         echo "
         <script>
             Swal.fire({
@@ -46,7 +50,7 @@ require_once '../verifica_secao.php'
             });
         </script>";
     }
-    if(isset($_GET['erro']) and $_GET['erro'] == 'acesso-negado'){
+    if (isset($_GET['erro']) and $_GET['erro'] == 'acesso-negado') {
         echo "
     <script>
         Swal.fire({
@@ -68,6 +72,18 @@ require_once '../verifica_secao.php'
         });
     </script>";
     }
+    if (isset($_GET) and isset($_GET['sucesso']) == 1) {
+        echo "
+    <script>
+        Swal.fire({
+            title: 'Sucesso',
+            text: 'Seu cadastro foi realizado! Faça o login para continuar.',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
+    }
     ?>
 </body>
+
 </html>

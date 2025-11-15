@@ -44,3 +44,15 @@ function vericarProduto($con)
     }
 }
 
+function exibirUsuarios($con){
+    try {
+        $sql = "SELECT id, nome, email, perfil, data_cadastro FROM usuarios ORDER BY data_cadastro DESC";
+        $stmt = $con->query($sql);
+        $usuarios = $stmt->fetchAll();
+        return $usuarios;
+
+    }catch (PDOException $e){
+        header('Location: view/usuarios-detalhes.php?erro=1');
+        exit();
+    }
+}

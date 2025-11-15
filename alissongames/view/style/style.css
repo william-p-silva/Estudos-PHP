@@ -1,57 +1,145 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f5;
+/* ===== RESET ===== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
-form {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
+    background-color: #f5f5f5;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    background-color: #4f46e5;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 1.6em;
     font-weight: bold;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+header a {
+    color: white;
+    margin-left: 15px;
+    font-size: 0.95em;
+    text-decoration: none;
+    transition: opacity 0.2s, text-decoration 0.2s;
 }
 
-form button {
-    background-color: #007BFF;
-    color: #fff;
+header a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Botão sair */
+header .sair {
+    margin-left: 15px;
+    padding: 8px 16px;
+    background-color: #ef4444;
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+}
+
+header .sair:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* ===== MAIN ===== */
+main {
+    margin: auto;
+}
+
+main h2 {
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ===== FORM ===== */
+main form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+
+}
+
+main form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+main form input[type="text"],
+main form input[type="email"],
+main form input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Botão principal */
+main form button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+    transition: 0.2s;
 }
 
-form button:hover {
-    background-color: #0056b3;
+main form button:hover {
+    background-color: #3b36c4;
 }
 
-#cad{
-    text-align: center;
-    font-size: 14px;
+/* ===== RESPONSIVO ===== */
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header form {
+        margin-top: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+#cad {
+    padding: 5px;
+    margin: 10px;
 }
