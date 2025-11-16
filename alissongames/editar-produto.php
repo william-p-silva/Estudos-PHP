@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'conexao.php';
 require_once 'verifica_secao.php';
 verificar_acesso('admin', 'view/tela-login.php');
 

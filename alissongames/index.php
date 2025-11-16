@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
 
@@ -46,24 +46,26 @@
 
     <!-- DESTAQUES -->
     <h2 class="title">Destaques</h2>
-    <div class="produtos-container">
-        <?php 
+    <div class="container-produtos">
+        <?php
         require_once 'exibe-detalhes.php';
         $produtos = exibiProdutosDisponiveis($con);
         foreach ($produtos as $produto) {
             $preco = $produto['preco'];
-            echo "
-            <div class='produto-card'>
-            <img src='img/gow.jpg' alt='God of War'>
-            <h3>God of War Ragnarok</h3>
-            <p class='preco'>R$ 199,90</p>
-            <button class='btn-produto'>Adicionar ao carrinho</button>
-        </div>
-            ";
-        }
+            echo "<div class='card-produto'>";
+            echo "<h3 class='titulo-produto'>" . $produto['nome'] . "</h3>";
+            echo "<p class='preco-produto'>R$ " . number_format($preco, 2, ',', '.') . "</p>";
+
+            echo "<form action='adicionar-carrinho.php' method='post'>";
+            echo "<input type='hidden' name='id' value='" . $produto['id'] . "'>";
+            echo "<button class='btn-add' type='submit'>Adicionar ao carrinho</button>";
+            echo "</form>";
+            echo "</div>";
+        };
         
+
         ?>
-        
+
     </div>
 
     <!-- CATEGORIAS -->
@@ -80,6 +82,30 @@
     <footer class="footer">
         © 2025 GameStore • Todos os direitos reservados
     </footer>
+    <?php 
+    if (isset($_GET['erro']) and $_GET['erro'] == 1) {
+        echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Dados Invalidos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
+    }
+    if (isset($_GET['erro']) and $_GET['erro'] == 2) {
+        echo "
+    <script>
+        Swal.fire({
+            title: 'Erro',
+            text: 'Produto Indisponivel',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
+    }
+    ?>
 
 </body>
 
