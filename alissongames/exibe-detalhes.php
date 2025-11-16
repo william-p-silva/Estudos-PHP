@@ -1,5 +1,5 @@
 <?php
-    require_once '../conexao.php';
+    require_once 'conexao.php';
 
 
 function contarUsuarios($con)
@@ -53,6 +53,19 @@ function exibirUsuarios($con){
 
     }catch (PDOException $e){
         header('Location: view/usuarios-detalhes.php?erro=1');
+        exit();
+    }
+}
+
+function exibiProdutosDisponiveis($con){
+    try {
+        $sql = "SELECT id, nome, descricao, preco, estoque, ativo FROM produtos WHERE ativo = 1 AND estoque > 0 ORDER BY nome ASC";
+        $stmt = $con->query($sql);
+        $produtos = $stmt->fetchAll();
+        return $produtos;
+
+    }catch (PDOException $e){
+        header('Location: view/usuario.php?erro=1');
         exit();
     }
 }

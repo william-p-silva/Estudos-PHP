@@ -1,9 +1,6 @@
-
-
 <?php
 
-require_once 'verifica_secao.php';
-verificar_acesso('admin');
+
 
 function exibeProduto($con)
 {
@@ -40,4 +37,3 @@ function exibeProduto($con)
     } catch (PDOException $e) {
         header('Location: view/admin.php?erro=1');}
 };
-?>

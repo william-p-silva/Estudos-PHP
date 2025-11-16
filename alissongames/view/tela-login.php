@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once '../verifica_secao.php'
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

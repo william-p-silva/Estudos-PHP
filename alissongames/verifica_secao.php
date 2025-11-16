@@ -1,11 +1,14 @@
 <?php
 
+
+
+
 function verificar_acesso($perfilRequerido = null, $paginaLogin = 'tela-login.php')
 {
     if (!isset($_SESSION['id'])) {
         session_unset();
         session_destroy();
-        header("location: $paginaLogin?erro=login-invalido");
+        header("location: $paginaLogin?erro=login-invalido1");
         exit;
     }
 

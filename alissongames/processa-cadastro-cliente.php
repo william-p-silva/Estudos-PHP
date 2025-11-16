@@ -1,4 +1,6 @@
 <?php
+
+
 if (empty($_POST['nome']) or empty($_POST['txtEmail']) or empty($_POST['senha'])) {
     header('Location: view/cadastro-cliente.php?erro=1');
     exit();

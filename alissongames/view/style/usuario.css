@@ -1,0 +1,208 @@
+/* ====== GENERAL ====== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f7;
+}
+
+
+/* ====== HEADER ====== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 15px 30px;
+    color: #fff;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.search {
+    flex: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.menu a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: #8a2be2;
+}
+
+.icons .icon {
+    font-size: 22px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+/* ====== HERO ====== */
+.hero {
+    height: 350px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de bolhas luminosas */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+}
+
+.hero::before {
+    width: 250px;
+    height: 250px;
+    background: #ffffff;
+    top: -40px;
+    right: -60px;
+}
+
+.hero::after {
+    width: 300px;
+    height: 300px;
+    background: #000000;
+    bottom: -50px;
+    left: -50px;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 450px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    padding: 12px 35px;
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    color: #6a11cb;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    background: #e9e9e9;
+}
+
+
+/* ====== DESTAQUES ====== */
+
+.title {
+    font-size: 28px;
+    margin: 40px 0 20px 20px;
+}
+
+.produtos-container {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.produto-card {
+    width: 250px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.produto-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.preco {
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.btn-produto {
+    width: 100%;
+    padding: 10px;
+    background: #8a2be2;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-produto:hover {
+    background: #6e23b5;
+}
+
+
+/* ====== CATEGORIAS ====== */
+
+.categorias {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cat-card {
+    flex: 1;
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cat-card:hover {
+    background: #8a2be2;
+}
+
+
+/* ====== FOOTER ====== */
+
+.footer {
+    margin-top: 50px;
+    background: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}

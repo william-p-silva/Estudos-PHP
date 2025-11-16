@@ -2,7 +2,7 @@
 session_start();
 require_once 'conexao.php';
 require_once 'verifica_secao.php';
-verificar_acesso('admin');
+verificar_acesso('admin', 'view/tela-login.php');
 
 if (empty($_GET['id']) or !is_numeric($_GET['id'])) {
     header('Location: view/usuarios-detalhes.php?erro=1');
