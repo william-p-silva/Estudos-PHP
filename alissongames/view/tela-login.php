@@ -23,7 +23,7 @@
             <input type="password" id="senha" name="senha" required>
             <br><br>
             <button type="submit">Entrar</button>
-            <p id="cad">Ainda não tem um cadastro? <a href="cadastro-cliente.php">Clique aqui</a></p>
+            <p id="cad">Ainda não tem um cadastro? <a href="cadastro-cliente.php">Clique aqui</a> Ou volte ao <a href="../index.php">inicio</a></p>
         </form>
     </main>
     <?php

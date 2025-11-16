@@ -29,7 +29,7 @@ if (empty($_POST['txtEmail']) or empty($_POST['senha'])) {
                 if ($usuario['perfil'] == 'admin') {
                     header('Location: view/admin.php');
                 } else {
-                    header('Location: view/inicioUsuario.php');
+                    header('Location: index.php');
                 }
                 exit;
             } else {

@@ -13,5 +13,10 @@ verificar_acesso();
 </head>
 <body>
     <h1>Bem vindo Usuario</h1>
+    <?php 
+    echo $_GET['id'];
+    echo "<br>";
+    echo $_GET['qtd'];
+    ?>
 </body>
 </html>

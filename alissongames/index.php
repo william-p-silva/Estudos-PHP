@@ -10,28 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameStore</title>
     <link rel="stylesheet" href="view/style/usuario.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/10339/10339556.png" type="image/x-icon">
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <header class="header">
-        <div class="logo">GameStore</div>
-
-        <input type="text" class="search" placeholder="Buscar produtos...">
-
-        <nav class="menu">
-            <a href="#">Jogos</a>
-            <a href="#">Consoles</a>
-            <a href="#">Acessórios</a>
-            <a href="#">Promoções</a>
-        </nav>
-
-        <div class="icons">
-            <span class="icon">🛒</span>
-            <span class="icon">👤</span>
-        </div>
-    </header>
+    <?php 
+    require_once 'exibir-front.php';
+    exibirNavBar();
+    ?>
 
     <!-- HERO / BANNER -->
     <section class="hero">
@@ -52,15 +41,17 @@
         $produtos = exibiProdutosDisponiveis($con);
         foreach ($produtos as $produto) {
             $preco = $produto['preco'];
+            echo "<a href='view/visao-produto.php?id=" . $produto['id'] . "' style='text-decoration: none; color: inherit;'>";
             echo "<div class='card-produto'>";
             echo "<h3 class='titulo-produto'>" . $produto['nome'] . "</h3>";
             echo "<p class='preco-produto'>R$ " . number_format($preco, 2, ',', '.') . "</p>";
 
-            echo "<form action='adicionar-carrinho.php' method='post'>";
+            echo "<form action='view/visao-produto.php' method='get'>";
             echo "<input type='hidden' name='id' value='" . $produto['id'] . "'>";
             echo "<button class='btn-add' type='submit'>Adicionar ao carrinho</button>";
             echo "</form>";
             echo "</div>";
+            echo "</a>";
         };
         
 
@@ -101,6 +92,17 @@
             title: 'Erro',
             text: 'Produto Indisponivel',
             icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    </script>";
+    }
+    if (isset($_GET['sucesso']) and $_GET['sucesso'] == 1) {
+        echo "
+    <script>
+        Swal.fire({
+            title: 'Sucesso',
+            text: 'Produto Adicionado no Carrinho',
+            icon: 'success',
             confirmButtonText: 'Ok'
         });
     </script>";

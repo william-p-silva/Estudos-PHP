@@ -4,27 +4,42 @@
 
 function contarUsuarios($con)
 {
-
+    try{
     $sql = "SELECT COUNT(*) AS total FROM usuarios";
     $stmt = $con->query($sql);
     $stmt = $stmt->fetchColumn();
     return $stmt;
+    }catch (PDOException $e){
+        header('Location: admin.php?erro=1');
+        exit();
+    }
 }
 
 
 function contarProdutos($con)
 {
+    try{
     $sql = "SELECT COUNT(*) AS total FROM produtos";
     $stmt = $con->query($sql);
     $stmt = $stmt->fetchColumn();
     return $stmt;
+    }catch (PDOException $e){
+        header('Location: admin.php?erro=1');
+        exit();
+    }
 }
 
 function contarPedidos($con){
+    try{
+        
     $sql = "SELECT COUNT(*) AS total FROM pedidos";
     $stmt = $con->query($sql);
     $stmt = $stmt->fetchColumn();
     return $stmt;
+    }catch (PDOException $e){
+        header('Location: admin.php?erro=1');
+        exit();
+    }
 }
 
 function vericarProduto($con)
@@ -66,6 +81,23 @@ function exibiProdutosDisponiveis($con){
 
     }catch (PDOException $e){
         header('Location: view/usuario.php?erro=1');
+        exit();
+    }
+}
+
+function exibirDetalhesProdutos($con, $id){
+    try {
+        $sql = "SELECT id, nome, descricao, preco, estoque, ativo FROM produtos WHERE id = :id";
+        $stmt = $con->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $produto = $stmt->fetch();
+        if (!$produto){
+            header('Location: ../index.php?erro=2');
+            exit();
+        }
+        return $produto;
+    }catch (PDOException $e){
+        header('Location: ../index.php?erro=1');
         exit();
     }
 }
