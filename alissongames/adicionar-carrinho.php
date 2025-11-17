@@ -46,7 +46,7 @@ try {
     $_SESSION['carrinho'][$idProduto] = $qtdProdutoDesejada;
 
     // Redireciona para a página do carrinho para ver o item adicionado
-    header('Location: ver-carrinho.php?sucesso=1');
+    header('Location: view/ver-carrinho.php?sucesso=1');
     exit();
 } catch (PDOException $e) {
     header('Location: index.php?erro=1');

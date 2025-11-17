@@ -2,7 +2,7 @@
 function exibirNavBar(){
     echo"
     <header class='header'>
-        <a href='#' class='logo-link'>
+        <a href='../index.php' class='logo-link'>
             <div class='logo'>GameStore</div>
         </a>
 
@@ -16,7 +16,7 @@ function exibirNavBar(){
         </nav>
 
         <div class='icons'>
-            <a href='ver-carrinho.php'><span class='icon'>🛒</span></a>
+            <a href='view/ver-carrinho.php'><span class='icon'>🛒</span></a>
             <a href='view/tela-login.php'><span class='icon'>👤</span></a>
         </div>
     </header>
