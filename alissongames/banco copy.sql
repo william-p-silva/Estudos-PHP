@@ -13,13 +13,13 @@ CREATE TABLE usuarios (
 );
 
 -- Tabela de Produtos
-CREATE TABLE produtos (
+ALTER TABLE produtos (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(150) NOT NULL UNIQUE,
     descricao TEXT,
     preco DECIMAL(10, 2) NOT NULL,
     estoque INT NOT NULL,
-    ativo BOOLEAN NOT NULL DEFAULT 1
+    categoria ENUM('jogo', 'console', 'acessorio') NOT NULL,
 );
 
 -- Tabela de Pedidos
